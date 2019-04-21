@@ -3,6 +3,14 @@ Installation
 You will need `Python <http://python.org>`_ 2.7 or 3.5 and higher to install
 and use :mod:`dataflake.wsgi.bjoern`.
 
+Bjoern itself requires the ``libev`` developer packages. Install them before
+you install this package:
+
+.. code-block:: console
+
+   $ sudo apt-get install -y libev-dev  # <- Ubuntu
+   $ sudo yum -y install libev-devel    # <- RHEL/CentOS
+
 It is advisable to install :mod:`dataflake.wsgi.bjoern` into a
 :term:`virtualenv` or similar environment like a buildout from
 :mod:`zc.buildout` to obtain isolation from any "system" packages you've got
