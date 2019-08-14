@@ -32,10 +32,19 @@ def serve_paste(app, global_conf, **kw):
     # Convert the values from the .ini file to something bjoern can work with
     host = kw.get('host', '')
     port = int(kw.get('port', '0')) or False
+    if not host and not port and kw.get('listen'):
+        listen = kw.get('listen')
+        if ':' in listen:
+            host = listen.split(':')[0]
+            port = int(listen.split(':')[1])
+        else:
+            host = ''
+            port = int(listen)
     if kw.get('reuse_port', '').lower() in ('1', 'true', 'on'):
         reuse_port = True
     else:
         reuse_port = False
 
+    import pdb; pdb.set_trace()
     run(app, host, port=port, reuse_port=reuse_port)
     return 0
