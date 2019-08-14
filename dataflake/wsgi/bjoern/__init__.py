@@ -45,6 +45,5 @@ def serve_paste(app, global_conf, **kw):
     else:
         reuse_port = False
 
-    import pdb; pdb.set_trace()
     run(app, host, port=port, reuse_port=reuse_port)
     return 0
