@@ -27,6 +27,22 @@ IPv4 interfaces (`0.0.0.0`). If no port is specified ``bjoern`` will choose a
 random port (probably not what you want). ``reuse_port`` sets ``SO_REUSEPORT``
 if it is available on your platform.
 
+Alternatively you could use ``listen`` directive instead of ``host`` and ``port``:
+
+.. code-block:: ini
+
+   [server:main]
+   use = egg:dataflake.wsgi.bjoern#main
+   listen = 127.0.0.1:8080
+   reuse_port = True
+
+.. code-block:: ini
+
+   [server:main]
+   use = egg:dataflake.wsgi.bjoern#main
+   listen = 8080
+   reuse_port = True
+
 
 Creating a basic WSGI configuration for Zope
 --------------------------------------------
