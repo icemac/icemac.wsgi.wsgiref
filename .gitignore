@@ -9,6 +9,7 @@ __pycache__
 .mr.developer.cfg
 .tox/
 coverage.xml
+default.profraw
 inituser
 bin/
 build/

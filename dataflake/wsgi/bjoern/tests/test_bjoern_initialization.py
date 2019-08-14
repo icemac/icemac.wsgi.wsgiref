@@ -50,5 +50,15 @@ class BjoernInitializationTests(unittest.TestCase):
         self.assertEqual(SERVER['port'], 8888)
         self.assertEqual(SERVER['reuse_port'], True)
 
+        # Listen without host
+        serve_paste(None, None, listen='8898')
+        self.assertEqual(SERVER['host'], '')
+        self.assertEqual(SERVER['port'], 8898)
+
+        # Listen with host
+        serve_paste(None, None, listen='127.0.0.2:8999')
+        self.assertEqual(SERVER['host'], '127.0.0.2')
+        self.assertEqual(SERVER['port'], 8999)
+
         # Clean up fake server class
         bjoern.run = old_impl
