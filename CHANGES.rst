@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.2 (unreleased)
+----------------
+
+
 1.1 (2019-08-14)
 ----------------
 - Added the ``listen`` parameter to pass a port or a host and port.
