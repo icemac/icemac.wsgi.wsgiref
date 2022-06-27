@@ -3,6 +3,10 @@ Changelog
 
 1.2 (unreleased)
 ----------------
+- Added support for Python 3.9 and 3.10
+
+- Switched to GitHub Actions for CI
+  (`#2 <https://github.com/dataflake/dataflake.wsgi.bjoern/issues/2>`_)
 
 
 1.1 (2019-08-14)
