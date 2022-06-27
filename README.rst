@@ -1,5 +1,5 @@
-.. image:: https://travis-ci.com/dataflake/dataflake.wsgi.bjoern.svg?branch=master
-   :target: https://travis-ci.com/dataflake/dataflake.wsgi.bjoern
+.. image:: https://github.com/dataflake/dataflake.wsgi.bjoern/actions/workflows/tests.yml/badge.svg
+   :target: https://github.com/dataflake/dataflake.wsgi.bjoern/actions/workflows/tests.yml
 
 .. image:: https://coveralls.io/repos/github/dataflake/dataflake.wsgi.bjoern/badge.svg?branch=master
    :target: https://coveralls.io/github/dataflake/dataflake.wsgi.bjoern?branch=master
@@ -28,3 +28,6 @@ application.
 It also includes a script to create a basic WSGI configuration file for Zope,
 similar to Zope's own ``mkwsgiinstance``, but specifying ``bjoern`` instead of
 ``waitress`` as WSGI server.
+
+Please not that ``bjoern`` requires the ``libev`` event library to be
+installed.
