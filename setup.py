@@ -19,7 +19,7 @@ from setuptools import setup
 
 NAME = 'dataflake.wsgi.bjoern'
 URL = 'https://github.com/dataflake/%s' % NAME
-VERSION = '1.2'
+VERSION = '1.3.dev0'
 
 
 def read(*rnames):
