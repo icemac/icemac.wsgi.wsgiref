@@ -18,7 +18,7 @@ from setuptools import setup
 
 
 NAME = 'dataflake.wsgi.bjoern'
-URL = 'https://github.com/dataflake/%s' % NAME
+URL = f'https://github.com/dataflake/{NAME}'
 
 
 def read(*rnames):
@@ -32,7 +32,7 @@ setup(
     url=URL,
     project_urls={
         'Documentation': 'https://dataflakewsgibjoern.readthedocs.io',
-        'Issue Tracker': '%s/issues' % URL,
+        'Issue Tracker': f'{URL}/issues',
         'Sources': URL,
     },
     license='ZPL 2.1',
