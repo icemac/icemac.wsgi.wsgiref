@@ -4,9 +4,12 @@ Changelog
 2.0 (unreleased)
 ----------------
 
+- Drop support for Python 2.7, 3.5, 3.6.
+
 
 1.2 (2022-06-27)
 ----------------
+
 - Added support for Python 3.9 and 3.10
 
 - Switched to GitHub Actions for CI
@@ -15,10 +18,12 @@ Changelog
 
 1.1 (2019-08-14)
 ----------------
+
 - Added the ``listen`` parameter to pass a port or a host and port.
   This is more in line with what ``plone.recipe.zope2instance`` expects.
 
 
 1.0 (2019-04-20)
 ----------------
+
 - Initial release
