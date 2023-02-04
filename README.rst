@@ -17,8 +17,9 @@
    :alt: Supported Python versions
 
 
-dataflake.wsgi.bjoern
-=====================
+=======================
+ dataflake.wsgi.bjoern
+=======================
 
 This package provides a PasteDeploy-compatible entry point to easily integrate
 the `bjoern WSGI server <https://github.com/jonashaag/bjoern>`_ into an
@@ -29,5 +30,5 @@ It also includes a script to create a basic WSGI configuration file for Zope,
 similar to Zope's own ``mkwsgiinstance``, but specifying ``bjoern`` instead of
 ``waitress`` as WSGI server.
 
-Please not that ``bjoern`` requires the ``libev`` event library to be
+Please note that ``bjoern`` requires the ``libev`` event library to be
 installed.
