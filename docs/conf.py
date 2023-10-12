@@ -17,7 +17,7 @@ year = datetime.datetime.now().year
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'dataflake.wsgi.bjoern'
+project = 'icemac.wsgi.wsgiref'
 copyright = '2019-%i, Jens Vagelpohl and Contributors' % year
 author = 'Jens Vagelpohl'
 

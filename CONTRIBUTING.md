@@ -1,6 +1,6 @@
-# Contributing to dataflake projects
+# Contributing to icemac's projects
 
-The projects under the dataflake GitHub organization are open source and
+The projects under the icemac GitHub username are open source and
 welcome contributions in different forms:
 
 * bug reports

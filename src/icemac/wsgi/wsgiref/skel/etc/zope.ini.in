@@ -3,7 +3,7 @@ use = egg:Zope#main
 zope_conf = %(here)s/wsgi.conf
 
 [server:main]
-use = egg:dataflake.wsgi.bjoern#main
+use = egg:icemac.wsgi.wsgiref#main
 host = 127.0.0.1
 port = 8080
 
@@ -18,7 +18,7 @@ pipeline =
     zope
 
 [loggers]
-keys = root, bjoern, wsgi
+keys = root, wsgiref, wsgi
 
 [handlers]
 keys = console, accesslog, eventlog
@@ -37,10 +37,10 @@ format = %(message)s
 level = INFO
 handlers = console, eventlog
 
-[logger_bjoern]
+[logger_wsgiref]
 level = INFO
 handlers = eventlog
-qualname = bjoern
+qualname = wsgiref
 
 [logger_wsgi]
 level = WARN

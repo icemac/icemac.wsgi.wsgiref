@@ -3,7 +3,7 @@
 
 Narrative documentation
 -----------------------
-Narrative documentation explaining how to use :mod:`dataflaks.wsgi.bjoern`.
+Narrative documentation explaining how to use :mod:`icemac.wsgi.wsgiref`.
 
 .. toctree::
     :maxdepth: 2
@@ -16,9 +16,8 @@ Narrative documentation explaining how to use :mod:`dataflaks.wsgi.bjoern`.
 
 Support
 -------
-If you need commercial support for this software package, please
-visit `https://www.zetwork.com <https://www.zetwork.com/>`_.
 
+None available.
 
 Indices and tables
 ------------------

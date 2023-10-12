@@ -23,23 +23,23 @@ def read(*rnames):
 
 
 setup(
-    name='dataflake.wsgi.bjoern',
-    version='2.1.dev0',
-    url='https://github.com/dataflake/dataflake.wsgi.bjoern',
+    name='icemac.wsgi.wsgiref',
+    version='0.1.dev0',
+    url='https://github.com/icemac/icemac.wsgi.wsgiref',
     project_urls={
-        'Documentation': 'https://dataflakewsgibjoern.readthedocs.io',
-        'Issue Tracker': ('https://github.com/dataflake/'
-                          'dataflake.wsgi.bjoern/issues'),
-        'Sources': 'https://github.com/dataflake/dataflake.wsgi.bjoern',
+        'Documentation': 'https://icemacwsgiwsgiref.readthedocs.io',
+        'Issue Tracker': ('https://github.com/icemac/'
+                          'icemac.wsgi.wsgiref/issues'),
+        'Sources': 'https://github.com/icemac/icemac.wsgi.wsgiref',
     },
     license='ZPL 2.1',
-    description='PasteDeploy entry point for the bjoern WSGI server',
+    description='PasteDeploy entry point for the wsgiref WSGI server',
     author='Jens Vagelpohl and Contributors',
-    author_email='jens@dataflake.org',
+    author_email='jens@icemac.org',
     long_description=(read('README.rst') + '\n\n' + read('CHANGES.rst')),
     packages=find_packages('src'),
     package_dir={'': 'src'},
-    namespace_packages=['dataflake', 'dataflake.wsgi'],
+    namespace_packages=['icemac', 'icemac.wsgi'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',
@@ -61,7 +61,6 @@ setup(
     python_requires='>=3.7',
     install_requires=[
         'setuptools',
-        'bjoern',
         'paste',  # For the translogger logging filter
         'Zope >= 5',  # To avoid reinventing the skeleton creation
     ],
@@ -74,10 +73,10 @@ setup(
     },
     entry_points={
         'paste.server_runner': [
-            'main=dataflake.wsgi.bjoern:serve_paste',
+            'main=icemac.wsgi.wsgiref:serve_paste',
         ],
         'console_scripts': [
-            'mkbjoerninstance=dataflake.wsgi.bjoern.configurator:mkzope',
+            'mkwsgirefinstance=icemac.wsgi.wsgiref.configurator:mkzope',
         ],
     },
     include_package_data=True,

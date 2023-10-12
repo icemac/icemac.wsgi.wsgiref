@@ -5,7 +5,7 @@ Bug tracker
 -----------
 For bug reports, suggestions or questions please use the
 GitHub issue tracker at
-https://github.com/dataflake/dataflake.wsgi.bjoern/issues.
+https://github.com/icemac/icemac.wsgi.wsgiref/issues.
 
 
 Getting the source code
@@ -14,10 +14,10 @@ The source code is maintained on GitHub. To check out the main branch:
 
 .. code-block:: console
 
-  $ git clone https://github.com/dataflake/dataflake.wsgi.bjoern.git
+  $ git clone https://github.com/icemac/icemac.wsgi.wsgiref.git
 
 You can also browse the code online at
-https://github.com/dataflake/dataflake.wsgi.bjoern
+https://github.com/icemac/icemac.wsgi.wsgiref
 
 
 Preparing the development sandbox
@@ -30,7 +30,7 @@ tools:
 
 .. code-block:: console
 
-    $ cd dataflake.wsgi.bjoern
+    $ cd icemac.wsgi.wsgiref
     $ python3.11 -m venv .
     $ bin/pip install -U pip wheel
     $ bin/pip install -U setuptools zc.buildout tox twine

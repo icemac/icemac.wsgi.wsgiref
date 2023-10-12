@@ -12,53 +12,49 @@
 #
 ##############################################################################
 import unittest
+from wsgiref.simple_server import WSGIRequestHandler
+
+from icemac.wsgi.wsgiref import WSGIServer
+from icemac.wsgi.wsgiref import serve_paste
 
 
 SERVER = {}
 
 
-def fake_run(app, host, **kw):
+def fake_init(self, server_address, request_handler):
     global SERVER
     SERVER.clear()
 
-    SERVER['app'] = app
-    SERVER['host'] = host
-    SERVER.update(kw)
+    SERVER['host'], SERVER['port'] = server_address
+    SERVER['request_handler'] = request_handler
 
 
-class BjoernInitializationTests(unittest.TestCase):
+def noop(self):
+    pass
+
+
+class WsgirefInitializationTests(unittest.TestCase):
+
+    def setUp(self):
+        self.orig_init = WSGIServer.__init__
+        WSGIServer.__init__ = fake_init
+        self.orig_serve_forever = WSGIServer.serve_forever
+        WSGIServer.serve_forever = noop
+
+    def tearDown(self) -> None:
+        WSGIServer.__init__ = self.orig_init
+        WSGIServer.serve_forever = self.orig_serve_forever
 
     def test_initialization(self):
-        # Install fake server class first
-        from dataflake.wsgi import bjoern
-        old_impl = bjoern.run
-        bjoern.run = fake_run
-
-        from dataflake.wsgi.bjoern import serve_paste
-
         global SERVER
 
         # The defaults
         serve_paste(None, None)
         self.assertEqual(SERVER['host'], '')
         self.assertEqual(SERVER['port'], False)
-        self.assertEqual(SERVER['reuse_port'], False)
+        self.assertEqual(SERVER['request_handler'], WSGIRequestHandler)
 
         # Host and port set
-        serve_paste(None, None, host='localhost', port='8888', reuse_port='On')
+        serve_paste(None, None, host='localhost', port='8888')
         self.assertEqual(SERVER['host'], 'localhost')
         self.assertEqual(SERVER['port'], 8888)
-        self.assertEqual(SERVER['reuse_port'], True)
-
-        # Listen without host
-        serve_paste(None, None, listen='8898')
-        self.assertEqual(SERVER['host'], '')
-        self.assertEqual(SERVER['port'], 8898)
-
-        # Listen with host
-        serve_paste(None, None, listen='127.0.0.2:8999')
-        self.assertEqual(SERVER['host'], '127.0.0.2')
-        self.assertEqual(SERVER['port'], 8999)
-
-        # Clean up fake server class
-        bjoern.run = old_impl

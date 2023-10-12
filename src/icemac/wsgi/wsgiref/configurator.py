@@ -18,7 +18,7 @@ from Zope2.utilities import mkwsgiinstance
 
 
 def mkzope():
-    """ Create a WSGI configuration for Zope and bjoern """
+    """ Create a WSGI configuration for Zope and wsgiref """
     # We want to override the source of the skeleton files.
     # Make sure they are not already passed in.
     already_set = False
